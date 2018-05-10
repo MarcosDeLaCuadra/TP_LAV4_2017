@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-
+import {MenubarModule} from 'primeng/menubar';
+import {MenuItem} from 'primeng/api';
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
@@ -8,10 +9,17 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 })
 export class MenuComponent implements OnInit {
 
+  
   constructor(private route: ActivatedRoute,
-    private router: Router) { }
+    private router: Router) {
+     
+     }
+  
 
+  
+ 
   ngOnInit() {
+    
   }
 
   Juego(tipo: string) {
@@ -28,6 +36,7 @@ export class MenuComponent implements OnInit {
       case 'AgilidadaMasListado':
           this.router.navigate(['/Juegos/AgilidadaMasListado']);
         break;
+     
     }
   }
 

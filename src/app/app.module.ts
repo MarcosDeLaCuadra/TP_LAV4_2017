@@ -45,18 +45,39 @@ import { ListadosComponent } from './componentes/listados/listados.component';
 import { JuegosComponent } from './componentes/juegos/juegos.component';
 import { RegistroComponent } from './componentes/registro/registro.component';
 import { MenuCardComponent } from './componentes/menu-card/menu-card.component';
+import { PreguntadosComponent } from './componentes/preguntados/preguntados.component';
 import { CabeceraComponent } from './componentes/cabecera/cabecera.component';
 import { QuienSoyComponent } from './componentes/quien-soy/quien-soy.component';
 import { AnagramaComponent } from './componentes/anagrama/anagrama.component';
+import { AnagramaComponent1 } from './anagrama/anagrama.component';
 import { ListadoDePaisesComponent } from './componentes/listado-de-paises/listado-de-paises.component';
 import { MapaDeGoogleComponent } from './componentes/mapa-de-google/mapa-de-google.component'
 import { AgmCoreModule } from '@agm/core';
 import { InputJugadoresComponent } from './componentes/input-jugadores/input-jugadores.component';
 import { SexoPipe } from './pipes/sexo.pipe';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatListModule} from '@angular/material/list';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatButtonModule} from '@angular/material/button';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {AccordionModule} from 'primeng/accordion';     //accordion and accordion tab
+import {MenuItem} from 'primeng/api';    
+import {ButtonModule} from 'primeng/button';
+
+import { PanelModule } from 'primeng/primeng';
+
+import { RadioButtonModule } from 'primeng/primeng';
+import {MatSelectModule} from '@angular/material/select';
+import { PptComponent } from './componentes/ppt/ppt.component';
+
+ 
+
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent,    
     AdivinaElNumeroComponent,
     ListadoDeResultadosComponent,
     ErrorComponent,
@@ -78,13 +99,30 @@ import { SexoPipe } from './pipes/sexo.pipe';
     MapaDeGoogleComponent,
     JugadoresListadoComponent,
     InputJugadoresComponent,
-    SexoPipe
+    SexoPipe,
+    PreguntadosComponent,
+    PptComponent,
+    AnagramaComponent1
+   
+    
   ],
   imports: [
     BrowserModule,
+    MatGridListModule,
+    PanelModule,
+    MatFormFieldModule,
+    RadioButtonModule,
     FormsModule,
+    BrowserAnimationsModule,
     RuteandoModule,
     HttpModule,
+    MatSelectModule,
+    MatProgressSpinnerModule,
+    MatListModule,
+    MatExpansionModule,
+    ButtonModule,
+    MatButtonModule,    
+    AccordionModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyB6f8x4IjRlesQ3oETc6BXYQHVRTOlY3Ys'
     })
@@ -92,7 +130,14 @@ import { SexoPipe } from './pipes/sexo.pipe';
     // importo el ruteo
     // RouterModule.forRoot(MiRuteo)
   ],
+
   providers: [ JuegoServiceService, MiHttpService,PaisesService,ArchivosJugadoresService,JugadoresService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports: [
+    BrowserAnimationsModule,
+    MatProgressSpinnerModule,
+    MatExpansionModule
+    
+  ]
 })
 export class AppModule { }

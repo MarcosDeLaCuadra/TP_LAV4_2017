@@ -26,14 +26,29 @@
         </ul>
     </div>
   </nav-->
-  <nav class="navbar navbar-inverse">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-            <span class="icon-bar"></span>
-                                  
-          </button>
-          <a class="navbar-brand" routerLink="/Principal">Inicio</a>
+  
+  <nav class="navbar navbar-dark bg-dark">
+   
+      
+      <div class="container-fluid"> 
+         <!-- -->
+          <div class="btn-group">
+            <button class="btn btn-outline-info mr-sm-2 dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Juegos
+            </button>
+            <div class="dropdown-menu">
+                <button class="dropdown-item" routerLink="/Juegos/Preguntados" type="button">Preguntados</button>
+                <button class="dropdown-item" routerLink="/Juegos/Agilidad" type="button">Agilidad Aritmetica</button>
+                <button class="dropdown-item" routerLink="/Juegos/Adivina" type="button">Adivina el numero</button>
+                <button class="dropdown-item" routerLink="/Juegos/PPT" type="button">Piedra papel o tijeras</button>
+                <button class="dropdown-item" routerLink="/Juegos/Anagrama" type="button">Anagrama</button>
+            </div>
+          </div>
+<!-- --> 
+        
+        <div class="navbar-header">   
+          <button class="btn btn-outline-info mr-sm-2" routerLink="/Principal">Inicio</button>
+        
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">

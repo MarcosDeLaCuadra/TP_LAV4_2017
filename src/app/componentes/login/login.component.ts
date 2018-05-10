@@ -30,9 +30,13 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
   }
+  
 
   Entrar() {
+    
     if (this.usuario === 'admin' && this.clave === 'admin') {
+     
+      localStorage.setItem('usuario', this.usuario);
       this.router.navigate(['/Principal']);
     }
   }
@@ -43,7 +47,7 @@ export class LoginComponent implements OnInit {
     this.progresoMensaje="NSA spy..."; 
     let timer = TimerObservable.create(200, 50);
     this.subscription = timer.subscribe(t => {
-      console.log("inicio");
+     
       this.progreso=this.progreso+1;
       this.ProgresoDeAncho=this.progreso+20+"%";
       switch (this.progreso) {
@@ -69,7 +73,7 @@ export class LoginComponent implements OnInit {
           break;
           
         case 100:
-          console.log("final");
+         
           this.subscription.unsubscribe();
           this.Entrar();
           break;

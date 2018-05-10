@@ -11,9 +11,20 @@ export class PrincipalComponent implements OnInit {
     isFirstOpen: true,
     isFirstDisabled: false
   };
-  constructor() {  }
+  usuario : string;
+  logeado: boolean;
+  constructor() {  
+   
+  }
 
   ngOnInit() {
+    this.usuario=   localStorage.getItem('usuario');
+   
+    if(this.usuario != null){
+     this.logeado = true;
+    }else{
+      this.logeado = true;
+    }
   }
 
  
